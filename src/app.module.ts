@@ -5,6 +5,8 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { join } from 'path';
 import { GraphQLJSON } from 'graphql-scalars';
 import { HelloWorldModule } from './hello-world/hello-world.module';
+import { ActivityLogConsumer } from './consumers/activity-log.consumer';
+import { ActivityLogService } from './services/activity-log.service';
 
 @Module({
   imports: [
@@ -17,7 +19,7 @@ import { HelloWorldModule } from './hello-world/hello-world.module';
     }),
     HelloWorldModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [ ActivityLogConsumer ],
+  providers: [ ActivityLogService ],
 })
 export class AppModule {}
