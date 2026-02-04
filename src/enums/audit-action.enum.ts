@@ -1,3 +1,4 @@
+import { registerEnumType } from "@nestjs/graphql";
 
 export enum AuditActionEnum {
     CREATE = 'CREATE',
@@ -13,3 +14,5 @@ export enum AuditActionEnum {
     EXECUTE = 'EXECUTE',
     ERROR = 'ERROR',
 }
+
+registerEnumType(AuditActionEnum, { name: 'AuditActionEnum' });

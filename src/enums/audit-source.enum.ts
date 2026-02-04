@@ -1,3 +1,4 @@
+import { registerEnumType } from "@nestjs/graphql";
 
 export enum AuditSourceEnum {
     API = 'API',
@@ -5,3 +6,5 @@ export enum AuditSourceEnum {
     JOB = 'JOB',
     MIGRATION = 'MIGRATION',
 }
+
+registerEnumType(AuditSourceEnum, { name: 'AuditSourceEnum' });

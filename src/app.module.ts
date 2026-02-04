@@ -7,6 +7,7 @@ import { GraphQLJSON } from 'graphql-scalars';
 import { HelloWorldModule } from './hello-world/hello-world.module';
 import { ActivityLogConsumer } from './consumers/activity-log.consumer';
 import { ActivityLogService } from './services/activity-log.service';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ActivityLogService } from './services/activity-log.service';
       // resolvers: { JSON: GraphQLJSON },
     }),
     HelloWorldModule,
+    CommonModule,
   ],
   controllers: [ ActivityLogConsumer ],
   providers: [ ActivityLogService ],
